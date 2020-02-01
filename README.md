@@ -1,23 +1,24 @@
 # ssr-demo
 
 ## Project setup
-```
+```shell
 yarn install
 ```
 
 ### Compiles and hot-reloads for development
-```
-yarn serve
+```shell
+yarn serve:dev
 ```
 
 ### Compiles and minifies for production
-```
-yarn build
+```shell
+yarn serve:prod
 ```
 
-### Lints and fixes files
-```
-yarn lint
+### Builds Docker containers
+```shell
+docker-compose up
+# Open browser with http://location:9100/webPage to preview
 ```
 
 ### Customize configuration
