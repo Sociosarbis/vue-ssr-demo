@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  nginx:
+    build:
+      context: ./nginx
+    ports:
+      - "9100:9100"
+    depends_on:
+      - ssr-server
+  ssr-server:
+    build:
+      context: .
+    ports:
+      - "8080:8080"

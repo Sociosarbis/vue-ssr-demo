@@ -4,14 +4,24 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "yarn run clean && yarn run build:client && yarn run build:server",
+    "lint": "vue-cli-service lint",
+    "clean": "rimraf dist/*",
+    "serve:dev": "cross-env NODE_ENV=development node server.js",
+    "build:client": "cross-env VUE_CLI_SERVICE_CONFIG_PATH=$INIT_CWD/build/vue.client.config.js VUE_CLI_BABEL_TARGET_NODE='' vue-cli-service build --no-clean",
+    "build:server": "cross-env VUE_CLI_SERVICE_CONFIG_PATH=$INIT_CWD/build/vue.server.config.js VUE_CLI_BABEL_TARGET_NODE='true' vue-cli-service build --no-clean",
+    "serve:prod": "cross-env NODE_ENV=production node server.js"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "core-js": "^3.4.4",
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^0.20.0",
+    "lru-cache": "^5.1.1",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
     "vue-router": "^3.1.3",
+    "vue-server-renderer": "^2.6.11",
     "vuex": "^3.1.2"
   },
   "devDependencies": {
@@ -23,12 +33,19 @@
     "@vue/cli-service": "^4.1.0",
     "@vue/eslint-config-prettier": "^5.0.0",
     "babel-eslint": "^10.0.3",
+    "chokidar": "^3.3.1",
+    "cross-env": "^7.0.0",
     "eslint": "^5.16.0",
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^5.0.0",
+    "memory-fs": "^0.5.0",
     "node-sass": "^4.12.0",
     "prettier": "^1.19.1",
+    "rimraf": "^3.0.1",
     "sass-loader": "^8.0.0",
-    "vue-template-compiler": "^2.6.10"
+    "vue-template-compiler": "^2.6.10",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-hot-middleware": "^2.25.0",
+    "webpack-node-externals": "^1.7.2"
   }
 }

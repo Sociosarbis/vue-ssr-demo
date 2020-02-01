@@ -1,0 +1,7 @@
+.git
+.editorconfig
+.browserslistrc
+.gitignore
+nginx
+dist
+node_modules
