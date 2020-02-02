@@ -8,8 +8,8 @@
     "lint": "vue-cli-service lint",
     "clean": "rimraf dist/*",
     "serve:dev": "cross-env NODE_ENV=development node server.js",
-    "build:client": "cross-env VUE_CLI_SERVICE_CONFIG_PATH=$INIT_CWD/build/vue.client.config.js VUE_CLI_BABEL_TARGET_NODE='' vue-cli-service build --no-clean",
-    "build:server": "cross-env VUE_CLI_SERVICE_CONFIG_PATH=$INIT_CWD/build/vue.server.config.js VUE_CLI_BABEL_TARGET_NODE='true' vue-cli-service build --no-clean",
+    "build:client": "cross-env VUE_CLI_SERVICE_CONFIG_PATH=$INIT_CWD/build/vue.client.config.js vue-cli-service build --no-clean",
+    "build:server": "cross-env VUE_CLI_SERVICE_CONFIG_PATH=$INIT_CWD/build/vue.server.config.js vue-cli-service build --no-clean",
     "serve:prod": "cross-env NODE_ENV=production node server.js"
   },
   "dependencies": {

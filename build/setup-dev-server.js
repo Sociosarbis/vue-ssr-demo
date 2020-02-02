@@ -47,7 +47,6 @@ module.exports = {
       }
     };
 
-    process.env.VUE_CLI_BABEL_TARGET_NODE = "";
     // dev middleware
     const clientCompiler = webpack(clientConfig);
     const devMiddleware = require("webpack-dev-middleware")(clientCompiler, {
@@ -75,7 +74,6 @@ module.exports = {
       heartbeat: 5000
     });
     app.use(hotMiddleware);
-    process.env.VUE_CLI_BABEL_TARGET_NODE = "true";
     // watch and update server renderer
     const serverCompiler = webpack(serverConfig);
     const mfs = new MFS();
